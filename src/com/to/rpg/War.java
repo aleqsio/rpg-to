@@ -1,6 +1,7 @@
 package com.to.rpg;
 
-import java.lang.reflect.Array;
+import com.to.rpg.people.Human;
+
 import java.util.List;
 
 /**
@@ -8,7 +9,6 @@ import java.util.List;
  * Created by Aleksander Mikucki (@aleqsio) on 25.05.2018.
  */
 public class War {
-    private Kingdom kingdom;
     private Human attacker;
     private Human defender;
 
@@ -30,8 +30,7 @@ public class War {
         }
     }
 
-    public War(Kingdom kingdom,Human attacker, Human defender) {
-        this.kingdom = kingdom;
+    public War(Human attacker, Human defender) {
         this.attacker = attacker;
         this.defender = defender;
     }
@@ -44,10 +43,11 @@ public class War {
         WarResult result;
         if (attackingForce > defendingForce) {
             result = new WarResult(attacker, defender);
+            defender.transferGoods(attacker);
         } else {
             result = new WarResult(defender, attacker);
+            attacker.transferGoods(defender);
         }
-        kingdom.redistributeGoods(result);
         return result;
     }
 }

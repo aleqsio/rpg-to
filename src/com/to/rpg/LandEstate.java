@@ -1,5 +1,7 @@
 package com.to.rpg;
 
+import com.to.rpg.people.Human;
+
 import java.util.ArrayList;
 import java.util.List;
 

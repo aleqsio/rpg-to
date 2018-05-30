@@ -10,7 +10,8 @@ import java.util.List;
  */
 public class Kingdom {
     private EstateManager estateManager;
+    private List<Good> goods;
 
-    public void redistributeGoods(War.WarResult result) {
-    }
+    //addGood()
+
 }
