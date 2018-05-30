@@ -14,6 +14,7 @@ public class LandEstate implements IEstate {
         this.owner = owner;
         this.address = address;
         this.surface = surface;
+        owner.giveGood(this);
     }
 
     private Human owner;

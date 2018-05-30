@@ -11,6 +11,12 @@ public class TownEstate implements IEstate {
     private Human owner;
     private String address;
 
+    public TownEstate(Human owner, String address){
+        this.address = address;
+        this.owner = owner;
+        owner.giveGood(this);
+    }
+
     @Override
     public Human getOwner() {
         return owner;
