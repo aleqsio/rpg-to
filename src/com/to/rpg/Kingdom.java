@@ -1,5 +1,9 @@
 package com.to.rpg;
 
+import com.to.rpg.people.King;
+import com.to.rpg.properties.EstateManager;
+import com.to.rpg.properties.IEstate;
+
 import java.util.List;
 
 /**
@@ -10,8 +14,12 @@ import java.util.List;
  */
 public class Kingdom {
     private EstateManager estateManager;
-    private List<Good> goods;
+    private List<IEstate> estates;
+    private King king;
 
-    //addGood()
+    public Kingdom(King king, List<IEstate> estates){
+        this.estates = estates;
+        this.king = king;
+    }
 
 }

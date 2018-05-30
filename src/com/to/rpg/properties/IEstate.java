@@ -1,4 +1,4 @@
-package com.to.rpg;
+package com.to.rpg.properties;
 
 import com.to.rpg.people.Human;
 

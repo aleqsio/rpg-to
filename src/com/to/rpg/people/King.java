@@ -9,14 +9,12 @@ import java.util.List;
  * Created by Aleksander Mikucki (@aleqsio) on 25.05.2018.
  */
 public class King extends Human{
-    List<Knight> lieges;
-
     public King(double stat, String name) {
         super(stat, name);
         super.subordinates = new ArrayList<>();
     }
 
-    public void addLiege(Knight subordinate) throws MultipleSeniorException, TooManySubordinatesException {
+    public void addSubordinate(Knight subordinate) throws MultipleSeniorException, TooManySubordinatesException {
         super.addSubordinate(subordinate);
     }
 

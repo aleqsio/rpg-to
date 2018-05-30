@@ -1,6 +1,7 @@
-package com.to.rpg;
+package com.to.rpg.properties;
 
 import com.to.rpg.people.Human;
+import com.to.rpg.properties.IEstate;
 
 /**
  * github.com/aleqsio

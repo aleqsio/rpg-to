@@ -1,7 +1,6 @@
 package com.to.rpg.people;
 
-import com.to.rpg.Good;
-import com.to.rpg.Kingdom;
+import com.to.rpg.properties.IEstate;
 import com.to.rpg.War;
 
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class Human {
     private double stat;
     private String name;
     private Human senior;
-    private List<Good> goods;
+    private List<IEstate> goods;
     protected List<Knight> subordinates;
 
 
@@ -46,7 +45,8 @@ public class Human {
             return Optional.of(senior);
     }
 
-    public void giveGood(Good good){
+    public void giveGood(IEstate good){
+        good.moveOwnership(this);
         goods.add(good);
     }
 
