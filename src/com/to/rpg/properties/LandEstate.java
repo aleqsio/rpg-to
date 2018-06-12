@@ -1,6 +1,7 @@
 package com.to.rpg.properties;
 
 import com.to.rpg.people.Human;
+import com.to.rpg.properties.IEstate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,8 @@ public class LandEstate implements IEstate {
 
     public List<LandEstate> divideBetween(List<Human> owners){
         List<LandEstate> newEstates = new ArrayList<>();
-        owners.forEach(owner -> newEstates.add(new LandEstate(owner,this.address,surface/newEstates.size())));
+        double dividedSurface = surface / owners.size();
+        owners.forEach(owner -> newEstates.add(new LandEstate(owner, this.address, dividedSurface)));
         return newEstates;
     }
 }

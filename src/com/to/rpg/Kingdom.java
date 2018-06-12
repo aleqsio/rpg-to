@@ -19,5 +19,4 @@ public class Kingdom {
         this.estates = estates;
         this.king = king;
     }
-
 }
