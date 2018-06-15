@@ -39,7 +39,7 @@ public class War {
         this.defender = defender;
     }
 
-    public WarResult wage() {
+    public WarResult wage(Kingdom kingdom) {
         List<Human> attackers = attacker.getSubordinates();
         List<Human> defenders = defender.getSubordinates();
         double attackingForce = Human.getCombinedStat(attackers);
@@ -47,10 +47,10 @@ public class War {
         WarResult result;
         if (attackingForce > defendingForce) {
             result = new WarResult(attacker, defender);
-            defender.transferGoods(attacker);
+            kingdom.moveEstates(attacker,defender);
         } else {
             result = new WarResult(defender, attacker);
-            attacker.transferGoods(defender);
+            kingdom.moveEstates(defender,attacker);
         }
         return result;
     }

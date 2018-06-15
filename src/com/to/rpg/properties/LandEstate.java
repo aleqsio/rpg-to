@@ -15,7 +15,6 @@ public class LandEstate implements IEstate {
         this.owner = owner;
         this.address = address;
         this.surface = surface;
-        owner.giveGood(this);
     }
 
     private Human owner;
@@ -49,5 +48,10 @@ public class LandEstate implements IEstate {
     }
     public String toString(){
         return "LandEstate owned by "+getOwner()+" with surface "+surface+"\n";
+    }
+
+    @Override
+    public void setOwner(Human owner) {
+        this.owner=owner;
     }
 }

@@ -9,5 +9,5 @@ import com.to.rpg.people.Human;
 public interface IEstate {
     Human getOwner();
     void moveOwnership(Human newOwner);
-
+    void setOwner(Human owner);
 }

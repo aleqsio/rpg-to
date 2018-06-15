@@ -1,5 +1,6 @@
 package com.to.rpg.people;
 
+import com.to.rpg.Kingdom;
 import com.to.rpg.properties.IEstate;
 import com.to.rpg.War;
 
@@ -16,14 +17,12 @@ public class Human {
     private double stat;
     private String name;
     private Human senior;
-    private List<IEstate> goods;
     protected List<Knight> subordinates;
 
 
     public Human(double stat, String name) {
         this.stat = stat;
         this.name = name;
-        this.goods = new ArrayList<>();
     }
 
     public String getName() {
@@ -45,10 +44,6 @@ public class Human {
             return Optional.of(senior);
     }
 
-    public void giveGood(IEstate good){
-        good.moveOwnership(this);
-        goods.add(good);
-    }
 
     public double getStat() {
         return stat;
@@ -58,12 +53,8 @@ public class Human {
         return group.stream().map(Human::getStat).reduce(Double::sum).orElse(0d);
     }
 
-    public void transferGoods(Human other){
-        goods.forEach(other::giveGood);
-    }
-
-    public War.WarResult declareWar(Human other){
-        return new War(this, other).wage();
+    public War.WarResult declareWar(Human other, Kingdom kingdom){
+        return new War(this, other).wage(kingdom);
     }
 
     public void addSubordinate(Knight subordinate) throws MultipleSeniorException, TooManySubordinatesException {

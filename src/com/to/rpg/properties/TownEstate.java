@@ -14,7 +14,6 @@ public class TownEstate implements IEstate {
     public TownEstate(Human owner, String address){
         this.address = address;
         this.owner = owner;
-        owner.giveGood(this);
     }
 
     @Override
@@ -25,6 +24,11 @@ public class TownEstate implements IEstate {
     @Override
     public void moveOwnership(Human newOwner) {
         owner = newOwner;
+    }
+
+    @Override
+    public void setOwner(Human owner) {
+        this.owner=owner;
     }
 
     public String toString(){
