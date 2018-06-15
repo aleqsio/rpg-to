@@ -45,10 +45,10 @@ public class Main {
         }
 
        Kingdom kingdom = new Kingdom(king,estateList);
-        System.out.print(estateList);
+        System.out.println(estateList);
         System.out.println("--------------");
         War.WarResult sampleWar = constituents.get(0).declareWar(constituents.get(1),kingdom);
         System.out.println(sampleWar);
-        System.out.print(kingdom.getEstates());
+        System.out.println(kingdom.getEstates());
     }
 }
