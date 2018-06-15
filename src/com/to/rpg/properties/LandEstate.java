@@ -47,4 +47,7 @@ public class LandEstate implements IEstate {
         owners.forEach(owner -> newEstates.add(new LandEstate(owner, this.address, dividedSurface)));
         return newEstates;
     }
+    public String toString(){
+        return "LandEstate owned by "+getOwner()+" with surface "+surface+"\n";
+    }
 }

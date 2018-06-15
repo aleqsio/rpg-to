@@ -66,7 +66,7 @@ public class Human {
         return new War(this, other).wage();
     }
 
-    protected void addSubordinate(Knight subordinate) throws MultipleSeniorException, TooManySubordinatesException {
+    public void addSubordinate(Knight subordinate) throws MultipleSeniorException, TooManySubordinatesException {
         if(subordinate.getSenior().isPresent()) throw new MultipleSeniorException();
         if(subordinates.size() >= 7) throw new TooManySubordinatesException();
         subordinate.setSenior(this);
@@ -75,5 +75,8 @@ public class Human {
 
     protected void setSenior(Human senior){
         this.senior = senior;
+    }
+    public String toString(){
+        return name;
     }
 }

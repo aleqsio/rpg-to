@@ -26,4 +26,8 @@ public class TownEstate implements IEstate {
     public void moveOwnership(Human newOwner) {
         owner = newOwner;
     }
+
+    public String toString(){
+        return "TownEstate owned by "+getOwner()+"\n";
+    }
 }

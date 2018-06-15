@@ -28,6 +28,10 @@ public class War {
         public Human getLooser() {
             return looser;
         }
+
+        public String toString(){
+            return "War won by "+winner+" lost by "+looser;
+        }
     }
 
     public War(Human attacker, Human defender) {
